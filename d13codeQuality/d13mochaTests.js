@@ -5,6 +5,7 @@ import { computeSalesCommission } from "./computesales.js";
 import { calDownpayment } from "./Caldownpayment.js";
 import { sumDigit } from "./SumDigits.js";
 import { calDistance } from "./CalDistance.js";
+// import { calDistance } from "../w1d2function/distance.js"
 describe("test of ComputSalesCommission", function () {
     it("tests salaried and 200 sales", function () {
         assert.strictEqual(computeSalesCommission(true, 200), 0);
