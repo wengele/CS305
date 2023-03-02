@@ -15,5 +15,5 @@ function calDownpayment(cost) {
     }
     return downPayment;
 }
-console.log(calDownpayment(40000));
+
 

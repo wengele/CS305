@@ -1,5 +1,3 @@
-// input sales and argument.
-// step - we use function to get the commission 
 export function computeSalesCommission(salaried, sales) {
     let commission = 0;
     if (salaried) {
@@ -21,4 +19,4 @@ export function computeSalesCommission(salaried, sales) {
     }
     return commission;
 }
-console.log(computeSalesCommission(false, 300));
+console.log(computeSalesCommission(false, 3500));
