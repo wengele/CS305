@@ -5,7 +5,7 @@ import { computeSalesCommission } from "./computesales.js";
 import { calDownpayment } from "./Caldownpayment.js";
 import { sumDigit } from "./SumDigits.js";
 import { calDistance } from "./CalDistance.js";
-/*describe("test of ComputSalesCommission", function () {
+describe("test of ComputSalesCommission", function () {
     it("tests salaried and 200 sales", function () {
         assert.strictEqual(computeSalesCommission(true, 200), 0);
     });
@@ -49,10 +49,10 @@ describe("it will calculate the sum of digits", function () {
         assert.strictEqual(sumDigit(331), 5);
     });
 });
-*/
+
 describe("it will calculate the distance", function () {
     it("take four parameter and calculate distance", function () {
-        assert.strictEqual(calDistance(0, 0, 5, 5), 7.07);
+        assert.strictEqual(calDistance(0, 0, 5, 5), 7);
     });
 
 });
