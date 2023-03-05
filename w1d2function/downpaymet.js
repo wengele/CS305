@@ -1,7 +1,7 @@
 // input cost of house
 // process we calculate the downpayment based on formula
 // out downpayment.
-function calDownpayment(cost) {
+/*function calDownpayment(cost) {
     let downPayment;
     let rate = 1 / 100;
     if (cost < 50000) {
@@ -15,5 +15,5 @@ function calDownpayment(cost) {
     }
     return downPayment;
 }
-
+*/
 

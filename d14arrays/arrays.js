@@ -87,9 +87,9 @@ export function reverseArrayInPlace(arr) {
 }
 /**
  * 
- * @param {*array} studentAnswers is a number array
- * @param {*array} correctAnswers is a number array
- * @returns number of correct answer 
+ * @param {*array} studentAnswers 
+ * @param {*array} correctAnswers 
+ * @returns array of correct answer 
  */
 export function scoreExams(studentAnswers, correctAnswers) {
     let correctscore = [];
