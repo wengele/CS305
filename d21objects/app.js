@@ -65,6 +65,11 @@ export function addBook() {
 
     const newID = library.length + 5000;  // hack to get a unique id for now
     //finish the implementation -- get the author, create a book object, and add to the library array
+    const bookAuthor = document.getElementById("author");
+    const author = bookAuthor.value;
+    let bookIN = { title: title, author: author, libraryID: newID };
+    library.push(bookIN);
+    return bookobj;
 }
 
 
