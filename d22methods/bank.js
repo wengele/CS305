@@ -30,16 +30,20 @@ bank.saveTransaction = function (id, amount) {
 };
 
 bank.debit = function (id, amount) {
+    if (this.getBalance(id) > amount) {
+        this.saveTransaction.push(-amount);
+    }
     /* make sure current balance is > amount */
-//IMPLEMENT THIS
+    //IMPLEMENT THIS
 };
 
 bank.credit = function (id, amount) {
     this.saveTransaction(id, amount);
+
 };
 
 bank.getBalance = function (id) {
-//IMPLEMENT THIS
+    //IMPLEMENT THIS
 };
 
 
@@ -48,7 +52,7 @@ bank.getBalance = function (id) {
  * @returns {number}  returns sum of all balances
  */
 bank.bankBalance = function () {
-//IMPLEMENT THIS
+    //IMPLEMENT THIS
 };
 
 
