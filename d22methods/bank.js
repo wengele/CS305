@@ -12,7 +12,7 @@ The bank object should have a transactionsDB property, which will be an array of
 
 */
 
-const bank = {
+export const bank = {
     transactionsDB: [],
 };
 bank.transactionsDB = [
@@ -43,14 +43,16 @@ bank.credit = function (id, amount) {
 };
 
 bank.getBalance = function (id) {
-    let balance = 0;
-    const customer = bank.transactionsDB.find(customer => customer.customerId === id);
-    for (let i = 0; i < customer.customerTransactions.length; i++) {
-        balance += customerTransactions[i];
-    }
-    return balance;
     //IMPLEMENT THIS
+    let customerBalance = 0;
+    const customer = bank.transactionsDB.find(customer => customer.customerId === id);
+
+    for (let i = 0; i < customer.customerTransactions.length; i++) {
+        customerBalance += customer.customerTransactions[i];
+    }
+    return customerBalance;
 };
+
 
 
 
@@ -58,17 +60,18 @@ bank.getBalance = function (id) {
  * @returns {number}  returns sum of all balances
  */
 bank.bankBalance = function () {
-    sum = 0;
-    for (const customer of this.transactionsDB) {
-        sum += customer.balance;
-    }
-
-
-    return sum;
-}
-module.exports = { bank };
-
     //IMPLEMENT THIS
+    let balance = 0;
+    for (let element of bank.transactionsDB) {
+        for (let i = 0; i < element.customerTransactions.length; i++) {
+            balance += element.customerTransactions[i];
+        }
+    }
+    return balance;
+};
+
+
+
 
 
 
