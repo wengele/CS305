@@ -1,9 +1,9 @@
 /* comment out the import assert line when running in the browser */
 //import assert from "node:assert/strict";
 
-import { Accumulator } from "./app.js";  //do this for all of the app.js functions used in the Mocha tests
+import { Calculator, Accumulator } from "./app.js";  //do this for all of the app.js functions used in the Mocha tests
 
-/*describe("calculator from constructor function", function () {
+describe("calculator from constructor function", function () {
     let calc;
     before(function () {
         calc = new Calculator();
@@ -22,7 +22,7 @@ import { Accumulator } from "./app.js";  //do this for all of the app.js functio
         assert.strictEqual(calc.mul(), 600);
     });
 });
-*/
+
 /*
 Write a constructor function Accumulator(initialValue, increment).  The object it creates should:
 •	Store the current accumulated value in a property currentValue.  The constructor should set this to be initialValue.

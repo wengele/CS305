@@ -2,11 +2,11 @@
 
 
 export const calculator = {
-
-    setValues() {
-        this.a = 2;
-        this.b = 3;
-
+    a: 0,
+    b: 0,
+    setValues: function (avalue, bvalue) {
+        this.a = avalue;
+        this.b = bvalue;
     },
     sum() {
         return this.a + this.b;
