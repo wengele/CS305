@@ -11,7 +11,6 @@ The bank object should have a transactionsDB property, which will be an array of
 {customerId: 1234, customerTransactions: [10, 50, -40] } would be one element of the array.
 
 */
-
 const bank = {
     transactionsDB: [],
 };
@@ -65,12 +64,12 @@ bank.bankBalance = function () {
     }
     return balance;
 };
-
+module.exports = { bank };
 
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
 /* must be at end of file if are exporting an object so the export is after the definition */
-//module.exports = { bank }; //add all of your object names here that you need for the node mocha tests
+ //add all of your object names here that you need for the node mocha tests
 
 
 

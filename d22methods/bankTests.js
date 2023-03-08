@@ -1,7 +1,7 @@
 /* comment out the import assert line when running in the browser */
 //import assert from "node:assert/strict"; 
 
-import {bank} from "./bank.js";  //import objects used in the Mocha tests
+import { bank } from./ bank.jsjs";  //import objects used in the Mocha tests
 
 describe("bank tests", function () {
 
