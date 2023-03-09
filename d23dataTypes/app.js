@@ -10,7 +10,7 @@ export function ucFirst(str) {
   return (str[0].toUpperCase() + str.slice(1));
 
 }
-
+console.log(ucFirst('wengel'));
 
 /**
  * 
@@ -30,11 +30,12 @@ export function checkSpam(str) {
  * @param {*} maxlength 
  */
 export function truncate(str, maxlength) {
-  return (str.length > maxlength) ?
-    str.slice(0, maxlength - 1) + '…' : str;
-
+  if (str.length > maxlength) {
+    return str.slice(0, maxlength - 1) + '…';
+  } else {
+    return str;
+  }
 }
-
 
 
 
