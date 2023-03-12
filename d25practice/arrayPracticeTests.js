@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 //import assert from "node:assert/strict";
 
 import { doubleNums, doubleAges, filterEven, filterOver10, findEvenAge, findEvenNum, includesEvenAge } from "./arrayPractice.js";
