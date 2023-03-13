@@ -15,7 +15,7 @@ function fn1(num) { return num + 100; }
 function fn2(num) { return num * 10; }
 
 foo2();*/
-function foo(bat) {
+/*function foo(bat) {
     if (bat) {
         bat = console.log("bat");
         return bat;
@@ -44,21 +44,7 @@ let ned = [{ we: "t" }, { wr: "we" }]
 
 function abc() {
     const arr = [];
-    for (const elements of bob) {
-        arr.push(elements);
-    }
-    return arr;
-}
-console.log(abc());*/
-"use strict";
-function foo() {
-    console.log(this);
-    this.y = this.y + 1;
-    console.log(this.y);
-
-}
-const abc = { x: 1, y: 100, z: foo };
-console.log(abc.z());
+    for (const elements of bob) {*/
 
 const donation1 = { fund: 1, ammou: 100 };
 const donation2 = { fund: 2, ammou: 10 };
@@ -66,77 +52,133 @@ const donation3 = { fund: 3, ammou: 1 };
 const donation4 = { fund: 4, ammou: 5 };
 const donation5 = { fund: 5, ammou: 15 };
 const da1 = { donations: [donation1, donation2], date: "01/10/2022" };
-const da2 = { dontations: [donation3, donation4, donation5], date: "01/10/2022" };
+const da2 = { donations: [donation3, donation4, donation5], date: "01/10/2022" };
 const dailyrecord = [da1, da2];
 //find the dailytotal
 
-let dailytotal = 0;
 
-for (let i = 0; i < dailyrecord.length; i++) {
-    const donations = dailyrecord[i].donations;
-    for (let j = 0; j < donations.length; j++) {
-        dailytotal += donations[j].ammou;
+
+function dailytotal(donations) {
+    let totalAmount = 0;
+    for (let i = 0; i < donations.length; i++) {
+        totalAmount += donations[i].ammou;
+    }
+
+    return totalAmount;
+}
+
+
+
+
+console.log(dailytotal(da1.donations));
+
+/*function dailyTotalReduce(donations) {
+    return { donations.reduce((total, current) => total + current.amount, 0); }
+}*/
+
+/*function totalDonations(dailyrecord) {
+    let sum = 0;
+    for (let i = 0; i < dailyrecord.length; i++) {
+        const day = dailyrecord[i];
+        const dayTotal = dailytotal(day.donations);
+        sum += dayTotal;
+    }
+    return sum;
+}*/
+
+function averageDonation(day) {
+
+    let total = 0;
+    for (let i = 0; i < day.donations.length; i++) {
+        total += day.donations[i].ammou;
+    }
+    return total / day.donations.length;
+}
+
+
+
+/*const numDonations = da1.donations.length;
+const avgDonation = dailytotal(da1.donations) / numDonations;
+return avgDonation;*/
+
+
+
+console.log(averageDonation(da2));
+
+/*function sortbyAverage(dailyrecord) {
+
+    return dailyrecord.sort((a, b) => {
+        const avgA = a.donations.reduce((total, current) => total + current.amount, 0);) / a.donations.length;
+        const avgB=b.donations.reduce((total, current) => total + current.amount, 0);)/a.donations.length;
+        return avgA - avgB;
+    
+}*/
+function sortByAverage(arr) {
+
+    return arr.sort((a, b) => {
+        const A = averageDonation(a);
+        const B = averageDonation(b);
+
+        return A - B;
+    });
+
+}
+
+console.log(sortByAverage(dailyrecord));
+
+
+
+
+/*function findBigDonations(dailyRecord, maxAmount) {
+    const bigDonations = [];
+    for (let i = 0; i < dailyRecord.length; i++) {
+        const day = dailyRecord[i];
+        const dayTotal = dailytotal(day.donations);
+        if (dayTotal > maxAmount) {
+            bigDonations.push({ date: day.date, amount: dayTotal });
+        }
+    }
+    return bigDonations;
+}
+
+console.log(findBigDonations(dailyrecord, 10));
+let total = 0;
+  for (const day of dailyRec) {
+    for (const donation of day.donations) {
+      if (donation.fund === funderId) {
+        total += donation.ammou;
+      }
+    }
+  }
+  return total;
+}
+function funderTotals(dailyRec, funderId) {
+  let total = 0;
+  for (const day of dailyRec) {
+    for (const donation of day.donations) {
+      if (donation.fund === funderId) {
+        total += donation.ammou;
+      }
+    }
+  }
+  return total;
+}
+
+*/
+/**
+ * 
+ * @param {*array} dailyRecord 
+ * @param {*number} funderId 
+ * @returns{array} 
+ */
+function funderTotals(dailyrecord, funderId) {
+    let result = [];
+    for (let i = 0; i < dailyrecord.length; i++) {
+        for (let j = 0; j < day.donations.length; j++) {
+            if (donations.funderId === funderId)
+                result.push(date.day.date, ammou: donation.ammou);
+        }
+        return result;
+
     }
 }
-
-console.log(dailytotal); // Output: 131
-const dailyTotal = dailyrecord.reduce((acc, { donations }) => {
-    return acc + donations.reduce((donationAcc, { amount }) => {
-        return donationAcc + amount;
-    }, 0);
-}, 0);
-
-
-
-console.log(dailyTotal);* /
-
-
-
-
-
-const numArray = [5, 0, 7, 77, -20, 300, 51, 2]
-const peopleArray = [{ name: "Sam", age: 15 }, { name: "William", age: 6 }, { name: "Lucy", age: 13 }, {
-    name:
-        "Barney", age: 80
-}]
-
-/*let result = numArray.map(number => number * 2);
-console.log(result);
-let result1 = peopleArray.map(people => { return { name: people.name, age: people.age * 2 } });
-console.log(result1);
-let result3 = numArray.filter(number => number % 2 === 0);
-console.log(result3);
-let result4 = peopleArray.filter(pop => pop.age > 10);
-console.log(result4)
-let result5 = numArray.find(number => number % 2 === 0);
-console.log(result5);
-let result6 = peopleArray.find(number => number.age > 10);
-console.log(result6);
-let result7 = numArray.reduce((sum, current) => sum + current, 0);
-console.log(result7);
-let result8 = numArray.reduce((sum, current) => sum + current, 0) / numArray.length;
-console.log(result8);
-let result9 = numArray.reduce((max, current) => max > current ? max : current);
-console.log(result9);
-let result10 = peopleArray.reduce((max, current) => current.age < max ? max : current.age);
-console.log(result10);
-*/
-
-function sumEven(peopleArray) {
-    let filterd = peopleArray.filter(number => number.age % 2 == 0);
-    let map = filterd.map(number => number.age);
-    let sumed = map.reduce((sum, current) => sum + current, 0);
-
-    return sumed;
-}
-console.log(sumEven(peopleArray));
-
-function sumOdd(peopleArray) {
-    let filterd = peopleArray.filter(number => number.age % 2 !== 0);
-    let map = filterd.map(number => number.age);
-    let sumed = map.reduce((sum, current) => sum + current, 0);
-
-    return sumed;
-}
-console.log(sumOdd(peopleArray));
-
