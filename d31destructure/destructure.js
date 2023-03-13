@@ -15,7 +15,11 @@ let salaries = {
     "Pete": 300,
     "Mary": 250
 };
-
+/**
+ * 
+ * @param {*object} salaries 
+ * @returns name
+ */
 export function topSalary(salaries) {
     let maxSalary = 0;
     let topperson = null;
