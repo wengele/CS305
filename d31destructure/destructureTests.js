@@ -1,5 +1,5 @@
 "use strict";
-import assert from "node:assert/strict";
+//import assert from "node:assert/strict";
 
 import { topSalary } from "./destructure.js";
 
