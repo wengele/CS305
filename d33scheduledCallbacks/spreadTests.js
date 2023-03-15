@@ -10,7 +10,8 @@ const findMin = myExports.findMin;
 const combineObjs = myExports.combineObjs; 
 
 */
-
+//import assert from "node:assert/strict";
+import { copyArray, concat, findMin, combineObjs } from "./spread.js";
 
 /*
 a)	Copy an array
@@ -28,7 +29,7 @@ describe("spread operator tests", function () {
         const oldArr = [1, 2, 3];
         const newArr = copyArray(oldArr);
         assert.deepEqual(newArr, oldArr);
-       // oldArr.push[4];
+        // oldArr.push[4];
         newArr.push(4);
         assert.deepEqual(oldArr, [1, 2, 3]);
     });
@@ -47,9 +48,9 @@ describe("spread operator tests", function () {
     });
 
     it("tests combine objects", function () {
-        const obj1 = {prop1: 1, prop2: 2};
-        const obj2 = {prop3: 1, prop4: 2};
+        const obj1 = { prop1: 1, prop2: 2 };
+        const obj2 = { prop3: 1, prop4: 2 };
 
-        assert.deepEqual(combineObjs(obj1, obj2), {prop1: 1, prop2: 2, prop3: 1, prop4: 2});
+        assert.deepEqual(combineObjs(obj1, obj2), { prop1: 1, prop2: 2, prop3: 1, prop4: 2 });
     });
 });
