@@ -11,7 +11,7 @@ const combineObjs = myExports.combineObjs;
 
 */
 //import assert from "node:assert/strict";
-import { copyArray, concat, findMin, combineObjs } from "./spread.js";
+import { copyArray, concat, findMin, combineObjs, findMax } from "./spread.js";
 
 /*
 a)	Copy an array
@@ -45,6 +45,12 @@ describe("spread operator tests", function () {
         const arr2 = [4, 5, 6, 7, 8, 0];
         assert.strictEqual(findMin(...arr1), 1);
         assert.strictEqual(findMin(...arr2), 0);
+    });
+    it("tests Math.max", function () {
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6, 7, 8, 0];
+        assert.strictEqual(findMax(...arr1), 3);
+        assert.strictEqual(findMax(...arr2), 8);
     });
 
     it("tests combine objects", function () {

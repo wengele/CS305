@@ -42,6 +42,10 @@ export function findMin(...numbers) {
 
 }
 
+export function findMax(...numbers) {
+    return Math.max(...numbers);
+
+}
 
 /**
  * 
