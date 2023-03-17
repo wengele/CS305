@@ -26,13 +26,13 @@ export let user = {
 
 };
 
-console.log(askPassword.call(user, user.loginOk, user.loginFail, "1234"));
+//console.log(askPassword.call(user, user.loginOk, user.loginFail, "1234"));
 
 
 
 
 
-/*export function askPassword2(ok, fail, password) {
+export function askPassword2(ok, fail, password) {
     if (password == "rockstar") {
         return ok();
     }
@@ -50,7 +50,7 @@ export let user2 = {
 };
 
 //console.log(askPassword2(() => user2.login(true), () => user2.login(false), "rockstar"), "John logged in");
-*/
+
 
 
 

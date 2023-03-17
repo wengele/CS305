@@ -28,14 +28,14 @@ describe("fix function that loses 'this'", function () {
 
 
 });
-describe("fix function that loses 'this'", function () {
+/*describe("fix function that loses 'this'", function () {
     it("tests wrong password", function () {
         assert.strictEqual(askPassword.call(user, user.loginOk, user.loginFail, "rockstar"), "John failed to log in");
     });
 
 
 });
-
+*/
 describe("Partial application for login", function () {
 
     it("tests rockstar", function () {
