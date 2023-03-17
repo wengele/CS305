@@ -1,4 +1,4 @@
-function sumAll(...args) { // args is the name for the array
+/*function sumAll(...args) { // args is the name for the array
     let sum = 0;
 
     for (let arg of args) {
@@ -47,3 +47,60 @@ const clonedwen = structuredClone(wen);
 
 clonedwen.addess = "mimi";
 console.log(clonedwen.addess);
+setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+let timerId = setInterval(() => alert('tick'), 2000);
+let timerId = setTimeout(() => alert("never happens"), 1000);
+alert(timerId); // timer identifier
+
+clearTimeout(timerId);
+alert(timerId);
+let timerId = setTimeout(function tick() {
+    alert('tick');
+    timerId = setTimeout(tick, 2000); // (*)
+}, 2000);
+function printNumbers(from, to) {
+    let current = from;
+
+    let timerId = setInterval(function () {
+        alert(current);
+        if (current == to) {
+            clearInterval(timerId);
+        }
+        current++;
+    }, 1000);
+}
+
+// usage:
+printNumbers(5, 10);
+function printNumbers(from, to) {
+    let current = from;
+
+    setTimeout(function go() {
+        alert(current);
+        if (current < to) {
+            setTimeout(go, 1000);
+        }
+        current++;
+    }, 1000);
+}
+
+// usage:
+printNumbers(5, 10);
+
+function printNumbers(from, to) {
+    let current = from;
+
+    function go() {
+        alert(current);
+        if (current == to) {
+            clearInterval(timerId);
+        }
+        current++;
+    }
+
+    go();
+    let timerId = setInterval(go, 1000);
+}
+*/
+
+
