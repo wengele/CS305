@@ -13,7 +13,7 @@ const askPassword2 = myExports.askPassword2; */
 /* modify the book functions (in the Function binding section tasks) to return values instead of displaying alerts, and to take the passwords as parameters rather than prompting for them.  
 Then write the additional mocha tests to use call and apply instead of bind.
 */
-import assert from "node:assert/strict";
+//import assert from "node:assert/strict";
 import { askPassword, user, askPassword2, user2 } from "./passwords.js";
 
 describe("fix function that loses 'this'", function () {
