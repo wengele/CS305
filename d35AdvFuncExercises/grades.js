@@ -30,9 +30,12 @@ quiz.key = [{ qid: 1, ans: "b" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }];
  * @param {Object} ans2 is an answer object 
  * @returns {number} difference of the identifiers
  */
-function answerComparator(ans1, ans2) {
-//IMPLEMENT THIS
+export function answerComparator(ans1, ans2) {
+    //IMPLEMENT THIS
+
+    return ans1.qid - ans2.qid;
 }
+
 
 /**
  * 
@@ -43,19 +46,24 @@ function answerComparator(ans1, ans2) {
  * compare them against key and add up matches
  */
 quiz.scoreStudent = function (sid) {
-//IMPLEMENT THIS
+    //IMPLEMENT THIS
+    for (const answer of students.sid) {
+        answr
+
+    }
+
 };
 
 /**
  * @returns {number} average score of all students
  * go through list of students and get score of each, then the average
  */
-quiz.getAverage = function(){
-//IMPLEMENT THIS
+quiz.getAverage = function () {
+    //IMPLEMENT THIS
 
 };
 
 
 
 /* comment out when running in browser */
-module.exports = {quiz}; 
+module.exports = { quiz }; 

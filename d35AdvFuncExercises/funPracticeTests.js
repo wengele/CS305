@@ -2,52 +2,53 @@
 /* You need the assert and function name declarations to test in node.  
 Comment these out when you send it to the browser with the index.html mocha setup page. 
  */
-const assert = require("assert");  //always need this with node
+/*const assert = require("assert");  //always need this with node
 const myExports = require("./funTests.js");  //with node need the name of your file with your functions here
 const myMap = myExports.myMap;  //do this for all of the functions used in the Mocha tests
 const myFilter = myExports.myFilter;
-const myReduce = myExports.myReduce;
-
+const myReduce = myExports.myReduce;*/
+//import assert from "node:assert/strict";
+import { myMap, myFilter, myReduce } from "./funTests.js"
 
 
 describe("map filter reduce", function () {
     let testArray = null;
-    beforeEach(function() {
+    beforeEach(function () {
         // runs before each test in this block
         testArray = [1, 2, 3];
     });
-    afterEach(function() {
+    afterEach(function () {
         // runs after each test in this block
         assert.deepEqual(testArray, [1, 2, 3]);  //all functions in this block should be pure
     });
     /* eslint-disable */
     it("tests map with double", function () {
-        function double(number) { return 2 * number;}
+        function double(number) { return 2 * number; }
         assert.deepEqual(myMap([1, 2, 3], double), [2, 4, 6]);
     });
 
     it("tests map with cube", function () {
-        function cube(number) { return number * number * number;}
+        function cube(number) { return number * number * number; }
         assert.deepEqual(myMap([1, 2, 3], cube), [1, 8, 27]);
     });
 
     it("tests filter with even", function () {
-        function even(number) { return (number % 2 === 0);}
+        function even(number) { return (number % 2 === 0); }
         assert.deepEqual(myFilter([1, 2, 3], even), [2]);
     });
 
     it("tests filter with > 1", function () {
-        function greater1(number) { return (number > 1);}
+        function greater1(number) { return (number > 1); }
         assert.deepEqual(myFilter([1, 2, 3], greater1), [2, 3]);
     });
 
     it("tests reduce with sum", function () {
-        function sum(acc, number) { return (number + acc);}
+        function sum(acc, number) { return (number + acc); }
         assert.strictEqual(myReduce([1, 2, 3, 4], sum, 0), 10);
     });
 
     it("tests reduce with mult", function () {
-        function mult(acc, number) { return (number * acc);}
+        function mult(acc, number) { return (number * acc); }
         assert.strictEqual(myReduce([1, 2, 3, 4], mult, 1), 24);
     });
 

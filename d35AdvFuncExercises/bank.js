@@ -1,7 +1,7 @@
 "use strict"
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser.
 */
-module.exports = { makeBank }; //add all of your function names here that you need for the node mocha tests
+//module.exports = { makeBank }; //add all of your function names here that you need for the node mocha tests
 
 
 /* 2.	In the following code the transactionsDB is publicly accessible to any code that has access to the bank object.  
@@ -12,8 +12,12 @@ Make the transactionsDB private by making it a local variable in the makeBank fu
 /**
  * @returns {bank} factory function that builds and returns bank object
  */
-function makeBank(){
+export function makeBank() {
     //implement this
+    return function () {
+        let x = bank.transactionsDB;
+        return x;
+    }
 }
 const bank = { transactionsDB: [], };
 bank.transactionsDB = [

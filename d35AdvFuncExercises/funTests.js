@@ -8,19 +8,28 @@
  * 
  * @param {*} arr 
  * @param {*} func 
- * @returns 
+ * @returns array
  */
-function myMap(arr, func) {
+
+export function myMap(arr, func) {
     //IMPLEMENTATION NEEDED
+
+    //const newarr = arr.map(function (number) { return number * 10 });
+    const y = arr.map(func);
+    return y;
 }
 
+//console.log(myMap([2, 3, 5], timesTen));
 /**
  * 
  * @param {*} arr 
  * @param {*} func 
- * @returns 
+ * @returns array
  */
-function myFilter(arr, func) {
+export function myFilter(arr, func) {
+
+    return arr.filter(func);
+
     //IMPLEMENTATION NEEDED
 }
 
@@ -29,9 +38,9 @@ function myFilter(arr, func) {
  * @param {*} arr 
  * @param {*} func 
  * @param {*} initialValue 
- * @returns 
+ * @returns number
  */
-function myReduce(arr, func, initialValue) {
+export function myReduce(arr, func, initialValue) {
     //IMPLEMENTATION NEEDED
-    return;
+    return arr.reduce(func, initialValue);
 }
