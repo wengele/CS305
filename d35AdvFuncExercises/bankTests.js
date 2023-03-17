@@ -6,7 +6,7 @@ Comment these out when you send it to the browser with the index.html mocha setu
 const myExports = require("./bank.js");  //with node need the name of your file with your functions here
 const makeBank = myExports.makeBank;  //do this for all of the functions used in the Mocha tests
 */
-import assert from "node:assert/strict";
+//import assert from "node:assert/strict";
 import { makeBank, } from "./bank.js"
 
 

@@ -9,7 +9,8 @@ Comment these out when you send it to the browser with the index.html mocha setu
 //const quiz = myExports.quiz;  //do this for all of the objects or functions used in the Mocha tests
 
 import assert from "node:assert/strict";
-import { } from "./grades.js"
+
+import { answerComparator } from "./grades.js";
 
 describe("grades from quiz", function () {
 

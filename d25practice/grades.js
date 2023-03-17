@@ -30,7 +30,7 @@ quiz.key = [{ qid: 1, ans: "b" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }];
  * @param {Object} ans2 is an answer object 
  * @returns {number} difference of the identifiers
  */
-function answerComparator(ans1, ans2) {
+export function answerComparator(ans1, ans2) {
     //IMPLEMENT THIS
     return ans1.gid - ans2.gid;
 
