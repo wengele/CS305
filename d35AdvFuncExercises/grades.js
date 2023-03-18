@@ -29,7 +29,7 @@ that you can use to sort the answer arrays by the quiz id, “qid”.
      Score 1 point for each answer that matches the key.
 */
 
-const quiz = {};
+export const quiz = {};
 quiz.students = [{ sid: 10, answers: [{ qid: 2, ans: "b" }, { qid: 3, ans: "a" }, { qid: 1, ans: "b" }] },
 { sid: 11, answers: [{ qid: 1, ans: "e" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }] },
 { sid: 12, answers: [{ qid: 3, ans: "b" }, { qid: 2, ans: "a" }, { qid: 1, ans: "d" }] }];
@@ -41,10 +41,9 @@ quiz.key = [{ qid: 1, ans: "b" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }];
  * @param {Object} ans2 is an answer object 
  * @returns {number} difference of the identifiers
  */
-export function answerComparator(ans1, ans2) {
+function answerComparator(ans1, ans2) {
     //IMPLEMENT THIS
-
-
+    return ans1.qid - ans2.quid;
 
 }
 
@@ -57,18 +56,24 @@ export function answerComparator(ans1, ans2) {
  * sort the student answers
  * compare them against key and add up matches
  */
+//IMPLEMENT THIS
+
 quiz.scoreStudent = function (sid) {
-    //IMPLEMENT THIS
-    for (const student of quiz.students) {
-        if (student.sid === sid) {
-            student = sid;
+    const student = quiz.students.find(person => person.sid === sid);
+    let score = 0;
+    for (let i = 0; i < student.answers.length; i++) {
+        const ansrr = student.answers[i];
+        for (let j = 0; j < quiz.key.length; j++) {
+            const keyy = quiz.key[j];
+            if (ansrr.qid === keyy.qid && ansrr.ans == keyy.ans) {
+                score++;
+
+            }
         }
-        answers.sort((a, b) => ans.a - ans.b);
-
-
     }
-
+    return score;
 };
+
 
 /**
  * @returns {number} average score of all students
@@ -76,7 +81,12 @@ quiz.scoreStudent = function (sid) {
  */
 quiz.getAverage = function () {
     //IMPLEMENT THIS
-
+    let sum = 0;
+    for (const student of quiz.students) {
+        sum += this.scoreStudent(student.sid);
+    }
+    const avg = sum / quiz.students.length;
+    return avg;
 };
 
 
