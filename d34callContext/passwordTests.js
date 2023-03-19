@@ -28,33 +28,17 @@ describe("fix function that loses 'this'", function () {
 
 
 });
-describe("setTimeOut test ", function () {
+describe("fix the losses this", function () {
 
     it("tests wrong password", function () {
-        assert.strictEqual(setTimeout(askPassword{(user.loginOk.bind(user), user.loginFail.bind(user), "1234"), "John failed to log in"}), 2000);
+        assert.strictEqual(askPassword(function () { return user.loginOk.call(user); }, function () { return user.loginFail.call(user); }, "1234"), "John failed to log in");
+    });
+    it("tests wrong password", function () {
+        assert.strictEqual(askPassword(function () { return user.loginOk.apply(user); }, function () { return user.loginFail.apply(user); }, "1234"), "John failed to log in");
     });
 
-//setTimeout(function () { abc.add.call(abc) }, 2000); 
-}):
 
-
-it("tests wrong password", function () {
-    assert.strictEqual(setTimeout(askPassword(user.loginOk.apply(user), user.loginFail.call(user), "1234"), "John failed to log in"), 1000);
 });
-//setTimeout(function () { abc.add.call(abc) }, 2000);
-
-it("Tests apply method with rockstar", function () {
-    assert.strictEqual(askPassword.apply(user, [user.loginOk, user.loginFail], "rockstar"), "John logged in");
-});
-it("Tests apply method with wrong password", function () {
-    assert.strictEqual(askPassword.apply(user, [user.loginOk, user.loginFail], "1234"), "John failed to log in");
-});
-});
-
-
-
-
-
 
 
 
@@ -67,6 +51,13 @@ describe("Partial application for login", function () {
 
     it("tests wrong password", function () {
         assert.strictEqual(askPassword2(() => user2.login(true), () => user2.login(false), "1234"), "John failed to log in");
+    });
+
+    it("tests wrong password", function () {
+        assert.strictEqual(askPassword2(function () { return user2.login.call(user2, true); }, function () { return user2.login.call(user2, false); }, "1234"), "John failed to log in");
+    });
+    it("tests wrong password", function () {
+        assert.strictEqual(askPassword2(function () { return user2.login.apply(user2); }, function () { return user2.login.apply(user2); }, "1234"), "John failed to log in");
     });
 
 });
