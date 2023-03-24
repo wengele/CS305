@@ -2,7 +2,7 @@
 /* global exports require Account   SavingsAccount CheckingAccount */
 
 /* exports at end of file since exporting an object, which can only be referenced after definition   */
-
+//import assert from "node:assert/strict";
 import { Account } from "./account.js"
 import { CheckingAccount } from "./checkingaccount.js"
 import { SavingsAccount } from "./savingsaccount.js"
