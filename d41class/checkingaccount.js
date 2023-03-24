@@ -29,22 +29,30 @@ export class CheckingAccount extends Account {
     getBalance() {
         return
     }
+    /* withdraw(amount) {
+         if (this._balance < 0 && -1 * (this._balance - amount) >= this._overdraft) {
+             throw new RangeError("Withdraw amount has to be greater than zero");
+         }
+         if (amount > this._balance + this._overdraft) {
+             throw new Error("Insufficient funds, cannot withdraw beyond overdraft limit");
+         }
+         if (amount <= 0) {
+             throw new RangeError("Withdraw amount has to be greater than zero");
+         }
+ 
+         this._balance -= amount;
+     }*/
     withdraw(amount) {
-        if (this._balance < 0 && -1 * (this._balance - amount) >= this._overdraft) {
-            throw new RangeError("Withdraw amount has to be greater than zero");
+        if (amount <= 0) {
+            throw RangeError("Withdraw amount has to be greater than zero");
         }
         if (amount > this._balance + this._overdraft) {
             throw new Error("Insufficient funds, cannot withdraw beyond overdraft limit");
         }
-        if (amount <= 0) {
-            throw new RangeError("Withdraw amount has to be greater than zero");
-        }
-        /*if (amount > this._balance) {
-            throw Error("Insufficient funds");
-            || amount > this._balance
-        }*/
         this._balance -= amount;
     }
+
+
 
     getBalance() {
         return super.getBalance();
