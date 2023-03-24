@@ -52,7 +52,8 @@ export class SavingsAccount extends Account {
         return this._account - amount;
     }
     endOfMonth() {
-        return "Interest added SavingsAccount 1: balance: 105 interest: 5";
+        return "Interest added SavingsAccount " + this._number + ": balance: " + this.getBalance() + " interest: " + this._interest;
+        //"Interest added SavingsAccount 1: balance: 105 interest: 5";
 
     }
 

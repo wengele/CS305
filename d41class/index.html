@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <!-- All of these tests run and show nicely in the browser when the module exports are commented out in the js files. 8/27/2021kl-->
+<!-- All of these tests run and show nicely in the browser when the module exports are commented out in the js files. 8/27/2021kl-->
+
 <head>
     <title>Bank Accounts</title>
     <meta charset="utf-8">
@@ -15,16 +16,16 @@
         let assert = chai.assert;
     </script>
 
-    <script src="account.js"></script>
-    <script src="savingsaccount.js"></script>
-    <script src="checkingaccount.js"></script>
-    <script src="bank.js"></script>
-    <script src="bankTests.js"></script>
+    <script src="account.js" type="module"></script>
+    <script src="savingsaccount.js" type="module"></script>
+    <script src="checkingaccount.js" type="module"></script>
+    <script src="bank.js" type="module"></script>
+    <script src="bankTests.js" type="module"></script>
 </head>
 
 <body>
     <div id="mocha"></div>
-    <script>
+    <script type="module">
         mocha.run();
     </script>
 </body>
