@@ -15,7 +15,7 @@ const CheckingAccount = chk.CheckingAccount;
 const sav = require("./savingsaccount.js");
 const SavingsAccount = sav.SavingsAccount;  
 */
-import assert from "node:assert/strict";
+//import assert from "node:assert/strict";
 
 import { Account } from "./account.js";
 import { Bank } from "./bank.js";
