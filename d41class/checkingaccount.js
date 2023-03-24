@@ -5,7 +5,7 @@
 //const Account = acc.Account;  //do this for all of the functions used in the Mocha tests
 
 /* exports at end of file since exporting an object, which can only be referenced after definition   */
-//import assert from "node:assert/strict";
+
 import { Account } from "./account.js";
 
 export class CheckingAccount extends Account {
@@ -33,8 +33,8 @@ export class CheckingAccount extends Account {
         if (this._balance < 0 && -1 * (this._balance - amount) >= this._overdraft) {
             throw new RangeError("Withdraw amount has to be greater than zero");
         }
-        if (amount > this._overdraft) {
-            throw Error("Insufficient funds, cannot withdraw beyond overdraft limit");
+        if (amount > this._balance + this._overdraft) {
+            throw new Error("Insufficient funds, cannot withdraw beyond overdraft limit");
         }
         if (amount <= 0) {
             throw new RangeError("Withdraw amount has to be greater than zero");
