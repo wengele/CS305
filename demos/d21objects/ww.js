@@ -29,3 +29,23 @@ function indHighScores(teamStats) {
 
 
 console.log(indHighScores(teamStats));
+
+const jersy = teamStats.filter(player => player.jersey > 10);
+console.log(jersy);
+
+const kk = teamStats.map(play => play.jersey);
+console.log(kk);
+const plaer3total = player3.stats.reduce((sum, current) => sum + current.points);
+function findhig(teamStats) {
+    let result = [];
+    for (const plaer of teamStats) {
+        let max = 0;
+        for (elem of plaer.stats) {
+            if (max < elem.points) {
+                max = elem.points;
+            }
+        }
+        result.push(max);
+    }
+    return result;
+}

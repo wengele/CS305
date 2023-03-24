@@ -44,3 +44,5 @@ export function findTotalPlayerPoints(player) {
 
 }
 //console.log(findTotalPlayerPoints(player1));
+const mapped = teamStats.map(person => person.jersey);
+console.log(mapped);

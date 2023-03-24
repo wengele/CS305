@@ -75,6 +75,7 @@ quiz.scoreStudent = function (sid) {
 };
 
 
+
 /**
  * @returns {number} average score of all students
  * go through list of students and get score of each, then the average
@@ -84,8 +85,9 @@ quiz.getAverage = function () {
     let sum = 0;
     for (const student of quiz.students) {
         sum += this.scoreStudent(student.sid);
+
+        let avg = sum / quiz.students.length;
     }
-    const avg = sum / quiz.students.length;
     return avg;
 };
 
