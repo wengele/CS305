@@ -30,12 +30,14 @@ export class CheckingAccount extends Account {
         return
     }
     withdraw(amount) {
-
-        if (amount <= 0) {
+        if (this._balance < 0 && -1 * (this._balance - amount) >= this._overdraft) {
             throw new RangeError("Withdraw amount has to be greater than zero");
         }
         if (amount > this._overdraft) {
-            throw new Error("Insufficient funds, cannot withdraw beyond overdraft limit");
+            throw Error("Insufficient funds, cannot withdraw beyond overdraft limit");
+        }
+        if (amount <= 0) {
+            throw new RangeError("Withdraw amount has to be greater than zero");
         }
         /*if (amount > this._balance) {
             throw Error("Insufficient funds");
@@ -47,7 +49,25 @@ export class CheckingAccount extends Account {
     getBalance() {
         return super.getBalance();
     }
+
+    toString() {
+        return "CheckingAccount " + this._number + ": balance: " + this.getBalance() + " overdraft limit: " + this._overdraft;
+
+    }
+    endOfMonth() {
+        if (this._balance < 0) {
+            return "Warning, low balance CheckingAccount " + this._number + ": balance: " + this.getBalance() + " overdraft limit: " + this._overdraft;
+        } else {
+            return "";
+        }
+    }
+
+
 }
+
+
+
+
 
 
 
