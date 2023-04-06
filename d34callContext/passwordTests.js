@@ -26,6 +26,9 @@ describe("fix function that loses 'this'", function () {
         assert.strictEqual(askPassword(user.loginOk.bind(user), user.loginFail.bind(user), "1234"), "John failed to log in");
     });
 
+    //obj.func.bind(obj)
+    // fuction(){return user.loginok.call(user);};
+
 
 });
 describe("fix the losses this", function () {

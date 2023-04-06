@@ -7,7 +7,7 @@ const myExports = require("./funTests.js");  //with node need the name of your f
 const myMap = myExports.myMap;  //do this for all of the functions used in the Mocha tests
 const myFilter = myExports.myFilter;
 const myReduce = myExports.myReduce;*/
-//import assert from "node:assert/strict";
+import assert from "node:assert/strict";
 import { myMap, myFilter, myReduce } from "./funTests.js"
 
 

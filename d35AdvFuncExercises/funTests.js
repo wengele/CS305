@@ -28,10 +28,19 @@ export function myMap(arr, func) {
  */
 export function myFilter(arr, func) {
 
-    return arr.filter(func);
-
-    //IMPLEMENTATION NEEDED
+    //return arr.filter(func);
+    let result = [];
+    for (let elemt of arr) {
+        if (func(elemt)) {
+            result.push(elemt);
+        }
+    }
+    return elemt;
 }
+
+
+//IMPLEMENTATION NEEDED
+
 
 /**
  * 
@@ -44,3 +53,16 @@ export function myReduce(arr, func, initialValue) {
     //IMPLEMENTATION NEEDED
     return arr.reduce(func, initialValue);
 }
+
+/*function reduce(array,func){
+    newarray=[];
+    for(let five of array){
+    if(func(five)){
+
+    }
+    }
+}*/
+// function(){user.log();};
+
+// user.sayHi.bind(user);
+//function(){user.sayHi.call(use)}
