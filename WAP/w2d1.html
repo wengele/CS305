@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        window.onload = function () {
+
+            let elem = document.getElementById("wengel", "score")
+            console.log(elem);
+            let ele = document.querySelectorAll("wengel")
+            for (const res of ele) {
+                console.log(res);
+            }
+
+            let es = document.getElementById("selam");
+            console.log(es.value)
+            let resutl = es.value;
+            let est = document.getElementById("teach");
+            let resut = est.value;
+            console.log(resut)
+
+            es.setAttribute('value', resut);
+            est.setAttribute('value', resutl);
+
+
+            let y = document.getElementById("wengel");
+
+            y.style.backgroundColor = "blue";
+
+            let pink = document.getElementById("wen");
+            pink.style.backgroundColor = "pink";
+
+
+            let t = document.getElementById("extra");
+            t.innerText = "hello world";
+            //my error was extra i was putting puting hello world in prant.
+
+            let yello = document.getElementById("wen");
+            yello.setAttribute("id", "wini");
+            console.log(yello);
+
+
+            let fe = document.getElementById("hem")
+            //fe.setAttribute("id", "wes");
+            //console.log(fe);
+            //fe.innerText = "okay";
+
+            let few = fe.querySelectorAll("option")
+            for (let i = 0; i < few.length; i++) {
+                if (few[i].innerText === "one") {
+                    few[i].innerText = "three";
+                } else {
+                    few[i].innerText = "four";
+                }
+            }
+
+
+            let sow = document.getElementById("selam")
+            console.log(sow);
+            sow.setAttribute("value", "volla")
+            console.log(sow.getAttribute("id"));
+
+
+
+            let see = document.getElementById("link");
+            console.log(see);
+            see.innerText = "sunday";
+            see.setAttribute("href", "https://www.w3schools.com/tags/att_input_type_checkbox.asp");
+            console.log(see);
+
+
+            let okkk = document.getElementById("wel");
+            okkk.setAttribute("width", "200px");
+            okkk.setAttribute("height", "200px");
+
+
+            let love = document.getElementById("wengel");
+            console.log(love);
+
+            love.innerHTML
+                = love.innerHTML + "flower";
+
+            //love.innerHTML =
+
+
+            //love.innerText = "<p> what a day</p>";// how do i keep level=flower and keep the rest in the div?
+
+
+
+            let viv = document.getElementById("pre").innerHTML = "selam";
+            console.log(viv);
+            let vit = document.getElementById("so").innerHTML = "text";
+            console.log(vit);
+            // when we make document.getelementbyID("").value.
+            //question;
+            //ol>first-child:last-child,last-child(2);
+            let apple = document.getElementById("banana");
+            console.log(apple);
+            let x = apple.querySelectorAll(" li");
+            console.log(x);
+
+            let rev = [];
+            for (let i = x.length - 1; i >= 0; i--) {
+                rev.push(x[i].innerHTML);
+                console.log(x[i].innerHTML)
+            }
+            for (let i = 0; i < rev.length; i++) {
+                x[i].innerHTML = rev[i];
+
+            }
+
+
+
+
+
+            //const seli = document.getElementById("error");
+            //seli.getAttribute("")
+            //cannot read properity of null 
+
+
+            //reference error
+            //document.getElementById(tk)
+
+            let lov = document.getElementById("wengel");
+            console.log(lov.innerHTML);
+            let banana = document.getElementById('banana')//.innerHTML;
+            console.log(banana);
+
+            let el = document.createElementById("p");
+            document.body.append(el);
+            el.outerHTML = "<p> helloo</p>"// outerhtml overide(replace)if we say document.getelementbyid("innerdiv") and if not ;
+
+
+            // lov.innerHTML = love.innerHTML + ' ' 
+            // faild to set outerhtml no parent node // 
+
+
+        }
+
+
+
+
+
+
+
+
+// when u write api console it step by step
+//know the data type
+// play with attribute and content
+// docume.getEelemetnbyid finder
+//document.queryselectorall() finder
+//uodate elemtn.setatrribute
+//update elemt.getattribute
+// change document.getelemt.innerhtml
+
+    </script>
+
+</head>
+
+
+<scr>
+
+    <body>
+        <form>
+
+            <p id="extra"></p>
+
+            <input id="wen" type="text" />
+
+            <br>
+
+            <select id="hem">
+
+
+                <option>one</option>
+                <option>two</option>
+
+            </select>
+
+
+
+            <select multiple>
+                <option>one</option>
+                <option>one</option>
+
+            </select>
+
+            <ol id="banana">
+                <li id="lil">doro</li>
+                <li>sec</li>
+                <li>orange</li>
+
+            </ol>
+
+
+
+            <textarea id="pre"> text</textarea>
+            <textarea id="so"> selam</textarea>
+
+
+
+            <input id="selam" type="button" value="but" />
+            <input id="teach" type="button" value="some" />
+
+            <input id="peace" type="radio" />
+            <input type="checkbox" />
+
+            <img src="image/bg-home-min.png" id="wel" />
+
+
+
+            <div id="wengel">
+                level<br>
+                up<br>
+
+                now
+            </div>
+
+            <a href="https://sakai.cs.miu.edu/access/content/group/b9ab4b96-d612-4009-bfeb-828c9b9fc764/review/DOM%20ChangeAttrs-InnerHtml.pdf"
+                id="link">
+                sakai</a>
+            <br>
+            <label id="sisi"> alem</label>
+            <label id="sis"> keporg</label>
+
+            <div id="div"></div>
+
+
+
+
+
+
+
+
+
+        </form>
+
+
+    </body>
+
+</html>

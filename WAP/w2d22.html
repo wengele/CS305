@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+
+            //let el = document.createElementById("p");
+            //body.append(el);
+            let m = document.getElementById("innerDIV");
+            let mydiv = document.getElementById("myDIV");
+
+            mydiv.outerHTML = " <p>helloo " + "<br>" + m.innerHTML + "</p>";
+            //elem.append();
+
+            //innerhtmlgivesusastring
+            //append left side child
+            //prepend add to right or before as child
+            //innerHTML can add childers and html and cntent
+            //we passs element in append&prepend
+            //adding sibling+~ we use .after.
+            //remove
+            // visbility display will move the 
+            // select.
+
+
+            let one1 = document.querySelectorAll("option");
+            console.log(one1);
+            let last = one1[one1.length - 1];
+
+            console.log(last)
+            // let onne = document.getElementById("opt")
+            let p1 = document.createElement("option");
+            p1.innerHTML = "Four";
+            //last.innerHTML = "four";
+            last.after(p1);
+
+            let one = document.querySelector("option");
+            console.log(one);
+            //let last = one[one.length - 1];
+            // let tw0 =
+            //     console.log(last)
+            // let onne = document.getElementById("opt")
+            let p = document.createElement("option");
+            p.innerHTML = "Two";
+            //last.innerHTML = "four";
+            one.after(p);
+            //one.after(last);
+
+
+
+
+
+
+
+            //let tab = document.getElement("tabl");
+
+            let tablerow = document.createElement("tr");
+            console.log(tablerow);
+            let tables = document.createElement("td");
+            let td2 = document.createElement("td");
+            td2.innerHTML = "three";
+            tables.innerHTML = "selam";
+            tablerow.append(tables);
+            tables.after(td2);
+
+            //let valu = document.getElementById("row");
+            //console.log(valu);
+            //valu.setAttribute("value", "wengel");
+
+            let roows = document.querySelector("input");
+
+            console.log(roows);
+            //roows.value.display = "none";
+            roows.setAttribute("value", "");
+            roows.setAttribute("id", "wengel");
+            roows.setAttribute("class", "");
+            let removed = roows.getAttribute("class", "myclass");
+            //console.log(removed);
+            roows.removeAttribute("class");
+
+
+            let ul = document.createElement("ul");
+            //let lil = document.createElement("li");
+
+            let rrow = document.querySelectorAll("td");
+            // console.log(tabll);
+            //let valu = "";
+            for (let i = 0; i < rrow.length; i++) {
+                let lil = document.createElement("li");
+                lil.innerHTML = rrow[i].innerHTML;
+                ul.append(lil);
+
+
+            }
+
+
+            console.log(ul);
+            document.body.append(ul);
+            let even = documen
+
+
+            // ul.append(valu);
+
+
+
+
+
+
+
+
+
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id='myDIV'> My paragraph
+        <div id='innerDIV'> INNEr DIV</div>
+    </div>
+
+
+    <select id="opt">
+        <option>
+            One
+        </option>
+        <option>
+            Thrid
+        </option>
+    </select>
+
+    <table>
+        <tr>
+            <td>First Row Col 1</td>
+            <td>First Row Col 2</td>
+        </tr>
+        <tr>
+            <td>Second Row Col 1</td>
+            <td>Second Row Col 2</td>
+        </tr>
+    </table>
+
+
+
+
+
+    <input class="myclass" value="pear" />
+
+</body>
+
+</html>
