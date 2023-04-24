@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    function read() {
+
+        let vedas = document.getElementById("scripture");
+        let selectedOption = vedas.options[vedas.selectedIndex];
+        let selectedText = selectedOption.innerHTML;
+        let selectedLabel = document.getElementById("selected");
+        selectedLabel.innerHTML = selectedText;
+
+        // let selectedlabel = document.getElementById("selected")
+        //let selectedlabel = document.getElementById("tab");
+        //selectedlabel.outerHTML = '<label>selectedtext:</label>' + value;
+    }
+
+
+</script>
+
+<body>
+    <h1>heading</h1>
+
+    <label>scripture</label>
+    <select id="scripture" name="scripture">
+        <option>vedas</option>
+        <option>unvans</option>
+    </select>
+    <br>
+
+    <label id="tab">selectedtext:</label>
+    <span id="selected"></span>
+
+
+    <button onclick="read()"> change</button>
+</body>
+
+</html>

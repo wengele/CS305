@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function readval() {
+        let options = document.querySelectorAll("select[name='electronics'] option:checked");
+        let option = ''
+        for (let pref of options) {
+            option += ' ' + pref.innerHTML;
+        }
+        let phon = document.querySelector("input[name='phone']:checked");
+        console.log(phon);
+        let phonValue = phon ? phon.value : '';
+
+        alert(`options::${option} phon:: ${phonValue} `);
+
+
+
+    }
+
+</script>
+
+<body>
+
+    <select name="electronics">
+
+        <option> phone </option>
+
+        <option> tablet </option>
+        <option> laptop </option>
+
+    </select>
+    <br>
+    <div>
+        <label>phone</label>
+        <input type="radio" value="iphone" name='phone' />
+        <label>iphone</label>
+        <input type="radio" value="android" name='phone' />
+        <label>iphone</label>
+    </div>
+
+    <br>
+
+    <button onclick="readval()"> button </button>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            let divv = document.createElement("div");
+            divv.innerHTML = `<label>state</label>
+        <select> city
+            <option value="">select</option>
+            <option for=""> Addis</option>
+            <option for=""> Adama</option>
+        </select>
+        <button onclick="showfunc()">show</button>
+        <div id="checkbox"></div>
+        <br>
+        <hr>
+        <button onclick="checkBox()">submit</button>`;
+
+            document.body.append(divv);
+
+        }
+
+        function showfunc() {
+
+            let selected = document.querySelector('select option:checked');
+            let innerDiv = document.getElementById('checkbox');
+            innerDiv.innerHTML = '';
+            if (selected.value === "Addis") {
+
+                innerDiv.innerHTML = `<input type="checkBox" value="piassa"><label>piassa</label>
+                <input type="checkBox" value="Megnagna"><label>Megnagna</label>
+                <input type="checkBox" value="4kilo"><label>4kilo</label>`;
+            } else if (selected.value === "Adama") {
+                innerDiv.innerHTML = `<input type="checkBox" value="bole"><label>bole</label>
+                <input type="checkBox" value="cmc"><label>cmc</label>
+                <input type="checkBox" value="hayat"><label>hayat</label>`;
+
+            } else {
+                innerDiv.innerHTML = `<label style="color:brown ;border: 3px solid red ;">* please select</label>`
+
+            }
+            divv.innerHTML = inner
+
+        }
+        function checkBox() {
+            let checkbox = document.querySelectorAll('input:checked');
+            console.log(checkbox);
+            let innerDiv = document.getElementById('checkbox');
+            console.log(innerDiv);
+            innerDiv.innerHTML = '';
+            for (const checked of checkbox) {
+                innerDiv.innerHTML += " " + checked.value;
+            }
+
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

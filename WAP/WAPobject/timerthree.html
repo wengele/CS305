@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <div id="myDv" style="background-color:yellow;">
+        Test
+    </div>
+    <p> My Text</p>
+    <input type="text" id='time' />
+    <button onclick="setTimer()">Set Timer</button>
+    <script>
+
+        function setTimer() {
+            let banner = document.getElementById('myDv');
+            let timeText = document.getElementById('time');
+            let time = parseInt(timeText.value);
+            setTimeout(() => {
+                timeText.style.display = "none";
+                setTimeout(() => {
+                    timeText.style.display = "block";
+                }, 2000);
+            }, time * 1000);
+            // setTimeout(() => {
+            //     banner.style.display = 'none';
+            //     setTimeout(() => {
+            //         banner.style.display = 'block';
+            //     }, 5000);
+            // }, time * 1000);
+        }
+    </script>
+</body>
+
+</html>

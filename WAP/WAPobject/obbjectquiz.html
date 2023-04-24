@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let myObj = { name: 'Ram', age: 30, skills: ['java', 'javascript'] }
+
+
+
+        window.onload = function () {
+
+
+
+            let div = document.createElement("div");
+
+            for (let obj in myObj) {
+                let label = document.createElement('label');
+                label.innerHTML = obj;
+                div.append(label);
+
+                if (Array.isArray(myObj[obj])) {
+
+                    let select = document.createElement('select');
+                    for (value of myObj[obj]) {
+
+                        let option = document.createElement('option');
+                        option.innerHTML = value;
+                        select.append(option);
+                        div.append(select);
+
+                    }
+
+                } else {
+                    let input = document.createElement('input');
+                    input.setAttribute("type", "text");
+                    input.setAttribute("id", "name");
+                    input.value = myObj[obj];
+                    div.append(input)
+                    let br = document.createElement('br');
+                    div.append(br);
+
+
+                }
+            }
+
+            let button = document.createElement('button');
+            button.setAttribute('onclick', 'submitForm()');
+            button.innerHTML = 'submit';
+            console.log(button);
+            document.body.append(button);
+
+            let reload = document.createElement('button');
+            reload.setAttribute('onclick', 'reloadForm()');
+            reload.innerHTML = 'reload';
+            console.log(reload);
+            //div.append(reload)
+            document.body.append(reload);
+            document.body.append(div);
+            document.querySelector('button').before(div);
+        }
+
+        function submitForm() {
+
+            let input = document.querySelectorAll('input');
+
+            let select = document.querySelectorAll('select');
+
+            let i = 0;
+
+            for (let obj in myObj) {
+                //change name
+
+                if (obj === 'name') {
+
+
+                    myObj[obj] = input[i].value;
+                    i++;
+
+                }
+                if (obj === 'age') {
+
+                    myObj[obj] = input[i].value;
+                    i++
+
+                }
+                if (obj === 'skills') {
+                    for (const sel of select) {
+                        myObj[obj] = sel.value;
+
+                    }
+                }
+            }
+
+            console.log(myObj);
+
+
+
+        }
+
+
+        function reloadForm() {
+
+            let input = document.querySelectorAll('input');
+            let select = document.querySelectorAll('select');
+            myObj = { name: 'Ram', age: 30, skills: ['java', 'javascript'] }
+            let i = 0;
+            for (let obj in myObj) {
+                //change name
+                if (obj === 'name') {
+
+                    myObj[obj] = myObj.name;
+                    i++;
+                }
+                if (obj === 'age') {
+
+                    myObj[obj] = myObj.age;
+                    i++
+
+                }
+                if (obj === 'skills') {
+                    for (const sel of select) {
+                        myObj[obj] = sel.value;
+
+                    }
+                }
+
+            }
+
+            console.log(myObj);
+        }
+
+
+
+
+    </script>
+</head>
+
+
+<body>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+
+    <script>
+
+
+
+
+        let fruits = ['apple', 'pear', 'banana'];
+        let interval;
+
+        window.onload = function () {
+
+            let i = 0;
+
+            let pattern = "col";
+
+
+
+            interval = setInterval(function () {
+
+                if (i == fruits.length) {
+
+                    if (pattern == "col") {
+
+                        pattern = "row";
+
+                    } else {
+
+                        pattern = "col";
+
+                    }
+
+                    i = 0;
+
+                }
+
+                fruitName = fruits[i];
+
+                let nameContainer;
+
+                if (pattern == "col") {
+
+                    nameContainer = document.createElement("div");
+
+                    nameContainer.append(fruitName);
+
+                } else {
+
+                    nameContainer = document.createElement("label");
+
+                    nameContainer.append(fruitName, " ");
+
+                }
+
+                let display = document.getElementById("display");
+
+                display.append(nameContainer);
+
+                i++;
+
+
+
+            }, 1000)
+
+
+
+
+        }
+
+        function terminate() {
+
+            clearInterval(interval);
+
+        }
+
+
+
+
+    </script>
+
+</head>
+
+
+
+
+<body>
+
+    <div id="display">Printing..</div>
+
+    <button onclick="terminate()">Stop</button>
+
+
+
+
+</body>
+
+
+
+
+</html>

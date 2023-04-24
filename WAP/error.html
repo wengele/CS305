@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function readValues() {
+        let valu = document.querySelector("input");
+        if (valu.style.display != "none")
+            valu.style.display = "none";
+        else
+            valu.style.display = "";
+
+    }
+    function radiobuton() {
+        let values = document.querySelectorAll("input[name='se']:checked");
+        let vaalu = values.length > 0 ? values[0].value : null;
+        //let vaalu = values.value;
+        let wini = document.querySelector(".wini");
+        let sami = document.querySelector(".sami");
+        if (vaalu === "wi") {
+            // select the element with class "wini"
+            /* s.style.color = "red";
+             s.style.backgroundColor = "black"; // this wont remove  the effect when the  the other class is added */
+            wini.classList.add("dark");
+            sami.classList.remove("dark");
+
+        } else if (vaalu === "gray") {
+            sami.classList.add("dark");
+            wini.classList.remove("dark");
+            // select the element with class "sami"
+            /*s.style.color = "black";
+            s.style.backgroundColor = "lightgray"; //  this will make the effect as the above one but doesnt remove when the above class is added*/
+
+        } else {
+            wini.classList.remove("dark");
+            sami.classList.remove("dark");
+        }
+
+
+        // we have to write the style separetely.
+
+    }
+
+
+
+
+</script>
+<style>
+    .dark {
+        color: red;
+        background-color: blue;
+    }
+</style>
+
+
+<body>
+
+
+    <input id=" te" type="text" name='password' />
+    <p class="wini">wengel</p>
+    <p class="sami">sami</p>
+
+    <div id="toog">
+        <label>dark</label>
+        <input id="red" type="radio" name='se' value="wi" />
+        <label>light</label>
+        <input id="red" type="radio" name='se' value="gray" />
+
+    </div>
+
+
+
+
+
+    <button onclick="radiobuton()">clik</button>
+
+
+
+    <button onclick="readValues()">My Button</button>
+
+
+</body>
+
+</html>

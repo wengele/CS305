@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <script>
+
+        let divv = document.createElement('div');
+        divv.innerHTML = "sites <br>"
+        console.log(divv);
+        document.body.append(divv);
+
+
+        let labell = document.createElement('label');
+        labell.innerHTML = `<input  name="one" type="text" value="" placeholder="site" >
+                <input name = "one" type = "text" value = "" placeholder = "site address" >
+                <input name = "one" type = "text" value = "" placeholder = " keyword" >
+                <button onclick="add()">add</button ><br>`;
+        divv.append(labell);
+
+
+
+        function add() {
+            let inputt = document.querySelectorAll("input[name='one']");
+            // console.log(inputt);
+            let message = '';
+
+            for (let inp of inputt) {
+                let lab = document.createElement('label');
+                //console.log(inputt[i].value.length);
+                if (inp.value === '') {
+                    message += "please enter name";
+                    console.log(message);
+                    lab.innerHTML = `${message}`;
+                    console.log(lab.innerHTML);
+                    divv.append(lab);
+                    inp.style.border = "solid 2px red";
+
+
+                }
+
+            }
+            let newdiv = document.createElement('div');
+            newdiv.innerHTML = `<label id="myId"> Add To </label>
+                                 <input type="checkbox" name="checker" value="tbl">
+                                 <label for=""> Table </label>
+                                 <input type="checkbox" name="checker" value="list">
+                                 <label for=""> List </label>
+                                 <button onclick="submit()">submit</button> <br>
+             	
+                 `;
+            divv.after(newdiv);
+
+
+
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

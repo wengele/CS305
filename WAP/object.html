@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+            let form = { name: 'ram', age: "30", profession: ["developer", 'java'] };
+
+
+            let div = document.createElement('div');
+            //let select = document.createElement('select');
+
+            for (elem in form) {
+
+
+                let label = document.createElement("label")
+                label.innerHTML = elem;
+                div.append(label);
+
+                if (Array.isArray(form[elem])) {
+                    let select = document.createElement('select');
+                    //option.innerHTML = form[elem];
+                    for (value of form[elem]) {
+
+                        let option = document.createElement('option');
+                        option.innerHTML = value;
+                        select.append(option);
+                        div.append(select);
+
+                    }
+
+
+
+                }
+                let input = document.createElement("input");
+
+                input.setAttribute("type", "text");
+                input.value = form[elem];
+                div.append(input)
+                let br = document.createElement('br');
+                div.append(br);
+
+
+            }
+
+            document.body.append(div);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

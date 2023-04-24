@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let myObj = { name: 'Ram', age: 30, skills: ['java', 'javascript'] }
+
+        window.onload = function () {
+            let namecont = document.createElement('div');
+            let namelabel = document.createElement('label');
+            namelabel.innerHTML = "name";
+            let nameinput = document.createElement('input');
+            nameinput.value = myObj.name;
+
+            nameinput.type = "text";
+            nameinput.id = "name";
+            namecont.append(namelabel);
+            namecont.append(nameinput);
+
+            let agecont = document.createElement('div');
+            let agelabel = document.createElement('label');
+            agelabel.innerHTML = "age";
+            let ageinput = document.createElement('input');
+            ageinput.value = myObj.age;
+            ageinput.type = "text";
+            ageinput.id = "age";
+            agecont.append(agelabel);
+            agecont.append(ageinput);
+
+            let skillsCont = document.createElement("div");
+            let skillsLabel = document.createElement("label");
+            skillsLabel.innerHTML = "skills";
+            skillsSelect = document.createElement("select");
+            skillsCont.append(skillsLabel);
+            skillsCont.append(skillsSelect);
+
+            for (let skill of myObj.skills) {
+                let option = document.createElement("option");
+                option.innerHTML = skill;
+                skillsSelect.append(option);
+            }
+
+            document.body.append(namecont);
+            document.body.append(agecont);
+            document.body.append(skillsCont);
+        }
+
+        function submitForm() {
+            // console.log(submitForm);
+            let nameINPUt = document.getElementById('name');
+            myObj.name = nameINPUt.value;
+            let ageINPUt = document.getElementById('age');
+            myObj.age = ageINPUt.value;
+            console.log(myObj);
+
+        }
+
+        function reloadForm() {
+            //console.log(reloadForm);
+            let x = submitForm();
+            x = '';
+            let nameINPUtt = document.getElementById('name');
+
+            nameINPUtt.value = myObj.name;
+            let ageINPUtt = document.getElementById('age');
+            ageINPUtt.innerHTML = '';
+            ageINPUtt.value = myObj.age;
+            console.log(myObj);
+        }
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <button onclick="submitForm()">Submit</button>
+    <button onclick="reloadForm()">Reload</button>
+</body>
+
+</html>

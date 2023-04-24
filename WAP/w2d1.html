@@ -97,14 +97,15 @@
             console.log(viv);
             let vit = document.getElementById("so").innerHTML = "text";
             console.log(vit);
-            // when we make document.getelementbyID("").value.
+            // when we make document.getelementbyID("").value
             //question;
             //ol>first-child:last-child,last-child(2);
             let apple = document.getElementById("banana");
             console.log(apple);
             let x = apple.querySelectorAll(" li");
             console.log(x);
-
+            //x.prepend();
+            //table tr:nth-child(2) td:nth-child(3)
             let rev = [];
             for (let i = x.length - 1; i >= 0; i--) {
                 rev.push(x[i].innerHTML);
@@ -114,6 +115,7 @@
                 x[i].innerHTML = rev[i];
 
             }
+
 
 
 

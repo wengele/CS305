@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let fruits = ['apple', 'pear', 'banana'];
+        let interval;
+        window.onload = function () {
+            let i = 0;
+
+            let colm = 'col';
+            interval = setInterval(function () {
+                if (i === fruits.length) {
+                    if (colm === 'col') {
+                        colm = 'row';
+                    } else {
+                        colm = 'col';
+                    }
+                    i = 0;
+                }
+
+
+                let fruit = fruits[i];
+                let elemt;
+                if (colm === 'col') {
+                    elemt = document.createElement('div');
+                    elemt.innerHTML = fruit;
+                } else {
+                    elemt = document.createElement('label');
+                    elemt.innerHTML = fruit + " ";
+
+                }
+                let divv = document.getElementById('idd');
+                divv.append(elemt);
+                i++;
+
+            }, 1000);
+
+        }
+        function stopfunc() {
+            clearInterval(interval);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="idd">print</div>
+    <button onclick="stopfunc()"> stop</button>
+</body>
+
+</html>

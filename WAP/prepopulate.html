@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+            let elemt = document.createElement("div");
+            elemt.innerHTML = "<label> textfield</label>" + "<input type='textfield' value='text'>"
+                + "<br>" + "<select> hobbies" + + '<option value="swimming">swimming</option>'
+                + '<option value="walking">walking</option>'
+                + '<option value="reading" selected>reading</option>'
+                + '</select > ';
+            document.body.append(elemt);
+
+            let elements = document.createElement("div");
+
+            elements.innerHTML = "<label>form</label>" + "<input type='radio' >" + "<input type='radio'>"
+
+            document.body.append(elements);
+
+        }
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

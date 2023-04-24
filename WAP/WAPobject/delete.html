@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="deleteRadio()">Delete</button>
+    <script>
+        let flowers = [{ name: 'rose', color: 'pink' }, { name: 'rose', color: 'red' }, { name: 'lily', color: 'white' }];
+        let buton = document.querySelector('button');
+        let div = document.createElement('div');
+        div.innerHTML = ``
+        for (let flws of flowers) {
+            div.innerHTML += `<input type="radio"><label for="">${flws.name}-${flws.color}</label>`
+        }
+        document.body.append(div);
+        div.after(buton);
+        function deleteRadio() {
+            let inputt = document.querySelector('input:checked');
+            let labeel = document.querySelector('label');
+
+            inputt.remove();
+            labeel.remove();
+
+        }
+    </script>
+
+</body>
+
+
+</html>

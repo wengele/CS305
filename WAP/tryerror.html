@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example</title>
+</head>
+
+<body>
+    <h1>Heading</h1>
+
+    <label>Scripture:</label>
+    <select id="scripture" name="scripture">
+        <option>Vedas</option>
+        <option>Unvans</option>
+    </select>
+    <br>
+
+    <label id="tab">Selected Text:</label>
+    <span id="selected"></span>
+
+    <button onclick="read()">Change</button>
+
+    <script>
+        function read() {
+            let vedas = document.getElementById("scripture");
+            let selectedOption = vedas.options[vedas.selectedIndex];
+            let selectedText = selectedOption.innerHTML;
+            let selectedLabel = document.getElementById("selected");
+            selectedLabel.innerHTML = selectedText;
+        }
+    </script>
+</body>
+
+</html>
